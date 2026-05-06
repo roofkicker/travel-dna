@@ -6,6 +6,10 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  future: {
+    // hover: 효과를 마우스 입력장치가 있는 환경에서만 적용 (모바일 탭 후 hover 잔존 방지)
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     extend: {
       colors: {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useParams } from "next/navigation";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { QUESTIONS, TOTAL_STEPS } from "@/lib/questions";
 import { useQuizStore } from "@/store/quizStore";
 import ProgressBar from "@/components/ProgressBar";
@@ -21,11 +21,23 @@ export default function QuizPage() {
     s.answers.find((a) => a.questionId === step),
   );
 
+  // 질문이 바뀔 때마다 활성 요소(focus)를 해제 — 이전 페이지의 클릭된 버튼이
+  // 같은 위치의 다음 페이지 버튼으로 focus/hover 상태를 넘기는 것을 방지.
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      (document.activeElement as HTMLElement | null)?.blur();
+    }
+  }, [step]);
+
   if (!question) {
     return null;
   }
 
   const handleSelect = (choiceId: string) => {
+    // 클릭 즉시 focus 해제 — 라우팅 후 같은 위치 버튼이 :focus 상태 잔존하는 문제 방지
+    if (typeof document !== "undefined") {
+      (document.activeElement as HTMLElement | null)?.blur();
+    }
     setAnswer(step, choiceId);
     setTimeout(() => {
       if (step >= TOTAL_STEPS) {
@@ -79,7 +91,7 @@ export default function QuizPage() {
               <button
                 key={choice.id}
                 onClick={() => handleSelect(choice.id)}
-                className={`flex w-full items-center gap-3 rounded-2xl border-2 p-3 text-left transition active:scale-[0.98] ${
+                className={`flex w-full items-center gap-3 rounded-2xl border-2 p-3 text-left transition focus:outline-none active:scale-[0.98] ${
                   isSelected
                     ? "border-brand-green bg-brand-green/10"
                     : "border-brand-cream-dark bg-white hover:border-brand-green/40"
