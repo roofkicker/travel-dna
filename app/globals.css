@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Paperlogy";
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.standard.woff2")
+    format("woff2-variations");
+}
+
+:root {
+  --brand-green: #2A5E42;
+  --brand-green-light: #4A7A60;
+  --brand-mint: #C9E9EB;
+  --brand-mustard: #F1C180;
+  --brand-pink: #F9A2A2;
+  --brand-cream: #F8F4EE;
+  --brand-cream-dark: #E8E2D4;
+  --brand-gray: #424241;
+  --brand-gray-light: #9B9B9A;
+  --brand-black: #171717;
+}
+
+html,
+body {
+  background-color: var(--brand-cream);
+  color: var(--brand-gray);
+  font-family: "Wanted Sans", "Pretendard", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+}
+
+h1,
+h2,
+h3,
+.title {
+  font-family: "Paperlogy", "Pretendard", system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+button {
+  font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
