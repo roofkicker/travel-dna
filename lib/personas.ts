@@ -85,7 +85,7 @@ export const PERSONAS: Record<PersonaCode, Persona> = {
     name: "숲 탐험가형",
     subtitle: "깊은 숲에서 답을 찾는 여행자",
     diagnosis:
-      "가벼운 산책으로는 부족한 당신. 한라산 1100m 고지에서 비로소 머리가 맑아지는 타입.",
+      "가벼운 산책으로는 부족한 당신. 오르고 오른 정상에서 비로소 머리가 맑아지는 타입.",
     description:
       "땀을 충분히 흘려야 하루가 마무리되는 사람입니다. 도시의 소음에서 벗어나 깊은 숲 한가운데서 비로소 자신을 만나는 타입이죠.",
     productIdx: 9,
