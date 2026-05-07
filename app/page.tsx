@@ -27,14 +27,25 @@ export default function HomePage() {
       </div>
 
       <div className="my-10 w-full">
-        <div className="rounded-3xl bg-brand-mint px-6 py-12 text-center">
-          <p className="text-7xl">🧬</p>
-          <p className="mt-6 text-xl font-bold text-brand-green">
-            나는 어떤 여행자일까?
-          </p>
-          <p className="mt-2 text-sm text-brand-gray">
-            8가지 여행 DNA 중 하나로 분류돼요
-          </p>
+        <div className="relative overflow-hidden rounded-3xl shadow-md">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://cdn-optimized.imweb.me/thumbnail/20251111/9ae53c6194d1b.jpg?w=750"
+            alt="제주 마을여행"
+            className="aspect-[4/3] w-full object-cover"
+            loading="eager"
+          />
+          {/* 하단 그라데이션 오버레이 — 사진 위쪽은 그대로 보이도록 */}
+          <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-brand-green via-brand-green/70 to-transparent" />
+          {/* 카피 오버레이 */}
+          <div className="absolute inset-x-0 bottom-0 px-5 pb-5 text-center">
+            <p className="text-xl font-bold text-brand-cream">
+              나는 어떤 여행자일까?
+            </p>
+            <p className="mt-1 text-sm text-brand-cream/80">
+              8가지 여행 DNA 중 하나로 분류돼요
+            </p>
+          </div>
         </div>
       </div>
 

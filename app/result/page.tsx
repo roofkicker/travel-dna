@@ -10,7 +10,6 @@ import { getProduct } from "@/lib/products";
 import { buildEataroundUrl } from "@/lib/utm";
 import ProductCard from "@/components/ProductCard";
 import ShareButtons from "@/components/ShareButtons";
-import CTASection from "@/components/CTASection";
 
 export default function ResultPage() {
   const router = useRouter();
@@ -139,7 +138,7 @@ export default function ResultPage() {
       </div>
 
       {subProducts.length > 0 && (
-        <div className="mb-6">
+        <div className="mb-10">
           <h2 className="mb-3 text-base font-bold text-brand-green">
             ☕ 함께 어울리는 다른 여행
           </h2>
@@ -201,10 +200,6 @@ export default function ResultPage() {
           </span>
         </div>
       </a>
-
-      <div className="mb-6">
-        <CTASection />
-      </div>
 
       <div className="mb-4">
         <ShareButtons
